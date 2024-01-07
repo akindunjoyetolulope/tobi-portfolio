@@ -1,24 +1,18 @@
 import styled from "@emotion/styled";
-import cx from "classnames";
 
 interface Props {
   withPadding?: boolean;
+  className?: string;
 }
 
 const Wrapper = (props: React.PropsWithChildren<Props>) => {
-  const { withPadding, ...rest } = props;
-  return (
-    <WrapperContainer
-      className={cx("withPadding", { withPadding })}
-      {...rest}
-    ></WrapperContainer>
-  );
+  const { withPadding, className, ...rest } = props;
+  return <WrapperContainer className={className} {...rest}></WrapperContainer>;
 };
 
 export default Wrapper;
 
 const WrapperContainer = styled.div`
-  .withPadding {
-    padding: 20px 0px;
-  }
+  max-width: 1440px;
+  margin: auto;
 `;

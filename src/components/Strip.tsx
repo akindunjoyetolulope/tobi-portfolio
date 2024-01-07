@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 import themes from "../styles/themes";
 import { css } from "@emotion/react";
-import { FaArrowRight } from "react-icons/fa6";
-
 interface StripElProps {
   aminate?: boolean;
   variant?: "purple" | "yellow" | "red";
@@ -20,23 +18,16 @@ const Strip = (props: React.PropsWithChildren<StripElProps & Props>) => {
   return (
     <StripContainer {...rest}>
       {typeof content === "string" ? (
-        <div className="flex gap-[20px] justify-center whitespace-nowrap">
-          <FaArrowRight
-            width={36}
-            height={36}
-            className="mr-[20px] ml-[20px]"
-          />
-          <p>{content}</p>
-        </div>
+        <p className="whitespace-nowrap words">{content}</p>
       ) : (
-        <div className="flex gap-[20px] whitespace-nowrap">
+        <>
           {content.map((c) => (
-            <>
-              <div className="w-[36px] h-[36px] rounded-full bg-black mr-[22px] ml-[20px]"></div>
+            <div className="flex gap-[20px] whitespace-nowrap words">
+              <div className="w-[36px] h-[36px] rounded-full bg-black"></div>
               <p>{c}</p>
-            </>
+            </div>
           ))}
-        </div>
+        </>
       )}
     </StripContainer>
   );
@@ -45,8 +36,10 @@ const Strip = (props: React.PropsWithChildren<StripElProps & Props>) => {
 export default Strip;
 
 const StripContainer = styled.div<StripElProps>`
-  padding: 10px 0px;
+  padding: 10px;
   overflow-y: scroll;
+  display: flex;
+  gap: 20px;
 
   ${(props) => {
     switch (props.variant) {
@@ -66,11 +59,30 @@ const StripContainer = styled.div<StripElProps>`
     }
   }};
 
+  .words {
+    @keyframes move-words {
+      0% {
+        left: 100%;
+      }
+      100% {
+        left: -100%;
+      }
+    }
+
+    ${(props) =>
+      props.aminate
+        ? css`
+            position: relative;
+            animation: move-words 50s linear infinite;
+            margin: 0;
+          `
+        : css``}
+  }
+
   ${(props) => {
     switch (props.size) {
       case "big":
         return css`
-          font-family: sans-serif;
           font-size: 96px;
           font-style: normal;
           font-weight: 600;
@@ -80,7 +92,6 @@ const StripContainer = styled.div<StripElProps>`
       case "small":
       default:
         return css`
-          font-family: sans-serif;
           font-size: 48px;
           font-style: normal;
           font-weight: 500;
