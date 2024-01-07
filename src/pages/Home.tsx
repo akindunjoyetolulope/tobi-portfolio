@@ -1,12 +1,14 @@
 import styled from "@emotion/styled";
 import media from "../styles/media";
 import { ReactComponent as Purple } from "../assets/purple.svg";
+import { ReactComponent as Others } from "../assets/others.svg";
 import Tobi from "../assets/tobi.jpeg";
 import Strip from "../components/Strip";
+import Wrapper from "../components/Wrapper";
 
 const Home = () => {
   return (
-    <>
+    <HomeEl>
       <HeaderContainer>
         <div>
           <img
@@ -37,10 +39,16 @@ const Home = () => {
         variant="purple"
       />
       <Strip
-        content={["interaction design", "data driven ux", "interaction design"]}
+        content={[
+          "micro-interactions",
+          "interaction design",
+          "data driven ux",
+          "micro-interactions",
+        ]}
+        aminate
       />
 
-      <Section>
+      <Wrapper>
         <div className="expricence">
           <p>
             In the past 7+ years, I have led the usability of digital products
@@ -54,24 +62,66 @@ const Home = () => {
         </div>
         <hr className="border-black mx-[40px] mobile:mx-[20px]" />
 
-        <div className="py-[24px] px-[40px] pb-[120px] mobile:px-[20px]">
+        <div className="pt-[24px] px-[40px] pb-[120px] mobile:px-[20px]">
           <p className="text-[16px] font-medium ">
             SOME BRANDS I’VE WORKED WITH
           </p>
           <div className="flex mt-[24px] mobile:flex-col">
             <div className="w-[524px]"></div>
-            <div className="max-w-[720px] text-[64px] font-medium mobile:text-[40px]">
-              Zalando / Unilever / eHealth / AZA Finance / Carbon / Ona /
-              Talarian / Afriex / TravelBeta
+            <div className="max-w-[720px] text-[64px] font-medium leading-tight mobile:text-[40px]">
+              Zalando <span className="font-thin">/</span> Unilever / eHealth /
+              AZA Finance / Carbon / Ona / Talarian / TravelBeta / Afriex
             </div>
           </div>
         </div>
-      </Section>
-    </>
+        <hr className="border-black mx-[40px] mobile:mx-[20px]" />
+
+        <div className="pt-[24px] px-[40px] pb-[120px] mobile:px-[20px]">
+          <p className="text-[16px] font-medium">TESTIMONIALS</p>
+          <div className="mt-[24px]">
+            <div>
+              <p className="text-[72px] font-medium mobile:text-[56px]">
+                Different
+              </p>
+              <p>
+                Tobi was a fractional hire to help us level up the aesthetics of
+                our remittance mobile apps after we got our Series A. His impact
+                went beyond the app redesign,{" "}
+              </p>
+              <hr className="w-[12px] border-black" />
+              <p>Stan Marion</p>
+              <p>CEO, Talarian</p>
+            </div>
+          </div>
+        </div>
+      </Wrapper>
+      <Strip content="→ VIEW MY WORKS" size="big" aminate />
+      <Wrapper className="smDesktop:hidden">
+        <Others />
+      </Wrapper>
+    </HomeEl>
   );
 };
 
 export default Home;
+
+const HomeEl = styled.div`
+  .expricence {
+    max-width: 974px;
+    padding: 60px 0px 120px 40px;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 48px; /* 126.316% */
+    letter-spacing: -0.6px;
+
+    ${media.mobile} {
+      padding: 60px 20px 120px 20px;
+      font-size: 30px;
+      line-height: 36px; /* 120% */
+      letter-spacing: -0.2px;
+    }
+  }
+`;
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -79,7 +129,7 @@ const HeaderContainer = styled.div`
   margin-top: 55px;
   padding-bottom: 115px;
 
-  ${media.mobile} {
+  ${media.smallDesktop} {
     flex-direction: column-reverse;
     margin-top: 35px;
     padding: 44px 20px;
@@ -89,7 +139,7 @@ const HeaderContainer = styled.div`
   .header-text {
     max-width: 680px;
     font-size: 105px;
-    font-style: normal;
+
     font-weight: 700;
     line-height: 92px;
     letter-spacing: -4px;
@@ -97,35 +147,10 @@ const HeaderContainer = styled.div`
 
     ${media.mobile} {
       font-size: 62px;
-      font-style: normal;
       font-weight: 900;
       line-height: 54px;
       letter-spacing: -2.6px;
       text-transform: uppercase;
-    }
-  }
-`;
-
-const Section = styled.section`
-  max-width: 1440px;
-  margin: auto;
-
-  .expricence {
-    max-width: 974px;
-    padding: 60px 0px 120px 40px;
-    font-size: 38px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 48px; /* 126.316% */
-    letter-spacing: -0.6px;
-
-    ${media.mobile} {
-      padding: 60px 20px 120px 20px;
-      font-size: 30px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 36px; /* 120% */
-      letter-spacing: -0.2px;
     }
   }
 `;
