@@ -6,7 +6,7 @@ module.exports = {
       screens: {
         smDesktop: { max: "1024px" }, // small desktop
         tablet: { max: "768px" },
-        mobile: { max: "480px" },
+        mobile: { max: "600px" },
         smMobile: { max: "320px" },
         xs: "480px",
       },
