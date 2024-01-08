@@ -5,6 +5,7 @@ import { ReactComponent as Others } from "../assets/others.svg";
 import Tobi from "../assets/tobi.jpeg";
 import Strip from "../components/Strip";
 import Wrapper from "../components/Wrapper";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -69,8 +70,14 @@ const Home = () => {
           <div className="flex mt-[24px] mobile:flex-col">
             <div className="w-[524px]"></div>
             <div className="max-w-[720px] text-[64px] font-medium leading-tight mobile:text-[40px]">
-              Zalando <span className="font-thin">/</span> Unilever / eHealth /
-              AZA Finance / Carbon / Ona / Talarian / TravelBeta / Afriex
+              Zalando <span className="font-thin">/</span> Unilever{" "}
+              <span className="font-thin">/</span> eHealth{" "}
+              <span className="font-thin">/</span> AZA Finance{" "}
+              <span className="font-thin">/</span> Carbon{" "}
+              <span className="font-thin">/</span> Ona{" "}
+              <span className="font-thin">/</span> Talarian{" "}
+              <span className="font-thin">/</span> TravelBeta{" "}
+              <span className="font-thin">/</span> Afriex
             </div>
           </div>
         </div>
@@ -78,8 +85,60 @@ const Home = () => {
 
         <div className="pt-[24px] px-[40px] pb-[120px] mobile:px-[20px]">
           <p className="text-[16px] font-medium">TESTIMONIALS</p>
-          <div className="mt-[24px]">
-            <div>
+          <div className="flex mt-[24px]">
+            <div className="border-black">
+              <p className="text-[72px] font-medium mobile:text-[56px]">
+                Different
+              </p>
+              <p>
+                Tobi was a fractional hire to help us level up the aesthetics of
+                our remittance mobile apps after we got our Series A. His impact
+                went beyond the app redesign,{" "}
+              </p>
+              <hr className="w-[12px] border-black" />
+              <p>Stan Marion</p>
+              <p>CEO, Talarian</p>
+            </div>
+            <div className="border-black">
+              <p className="text-[72px] font-medium mobile:text-[56px]">
+                Different
+              </p>
+              <p>
+                Tobi was a fractional hire to help us level up the aesthetics of
+                our remittance mobile apps after we got our Series A. His impact
+                went beyond the app redesign,{" "}
+              </p>
+              <hr className="w-[12px] border-black" />
+              <p>Stan Marion</p>
+              <p>CEO, Talarian</p>
+            </div>
+            <div className="border-black">
+              <p className="text-[72px] font-medium mobile:text-[56px]">
+                Different
+              </p>
+              <p>
+                Tobi was a fractional hire to help us level up the aesthetics of
+                our remittance mobile apps after we got our Series A. His impact
+                went beyond the app redesign,{" "}
+              </p>
+              <hr className="w-[12px] border-black" />
+              <p>Stan Marion</p>
+              <p>CEO, Talarian</p>
+            </div>
+            <div className="border-black">
+              <p className="text-[72px] font-medium mobile:text-[56px]">
+                Different
+              </p>
+              <p>
+                Tobi was a fractional hire to help us level up the aesthetics of
+                our remittance mobile apps after we got our Series A. His impact
+                went beyond the app redesign,{" "}
+              </p>
+              <hr className="w-[12px] border-black" />
+              <p>Stan Marion</p>
+              <p>CEO, Talarian</p>
+            </div>
+            <div className="border-black">
               <p className="text-[72px] font-medium mobile:text-[56px]">
                 Different
               </p>
@@ -99,6 +158,7 @@ const Home = () => {
       <Wrapper className="smDesktop:hidden">
         <Others />
       </Wrapper>
+      <Footer variant="red" />
     </HomeEl>
   );
 };
