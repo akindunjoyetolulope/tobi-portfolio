@@ -5,6 +5,7 @@ import { ReactComponent as Others } from "../assets/others.svg";
 import Tobi from "../assets/tobi.jpeg";
 import Strip from "../components/Strip";
 import Wrapper from "../components/Wrapper";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -99,6 +100,7 @@ const Home = () => {
       <Wrapper className="smDesktop:hidden">
         <Others />
       </Wrapper>
+      <Footer variant="red" />
     </HomeEl>
   );
 };

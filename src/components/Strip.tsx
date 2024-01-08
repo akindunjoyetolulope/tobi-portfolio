@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import themes from "../styles/themes";
 import { css } from "@emotion/react";
+import media from "../styles/media";
 interface StripElProps {
   aminate?: boolean;
   variant?: "purple" | "yellow" | "red";
@@ -88,6 +89,11 @@ const StripContainer = styled.div<StripElProps>`
           font-weight: 600;
           line-height: 152px;
           text-transform: uppercase;
+
+          ${media.mobile} {
+            font-size: 60px;
+            line-height: 72px;
+          }
         `;
       case "small":
       default:
@@ -98,6 +104,11 @@ const StripContainer = styled.div<StripElProps>`
           line-height: 36px;
           letter-spacing: -2px;
           text-transform: uppercase;
+
+          ${media.mobile} {
+            font-size: 48px;
+            line-height: 36px; /* 75% */
+          }
         `;
     }
   }}
