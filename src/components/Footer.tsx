@@ -32,7 +32,7 @@ const Footer = (props: Props) => {
           <p className="mobile:mt-[24px]">TIMEZONE: EUROPE/BERLIN</p>
         </div>
         <div className="flex justify-between mt-[21px] mobile:flex-col-reverse">
-          <p className="text-[#9B9287]">@2024 MAYOWA/TOBI</p>
+          <p className="text-[#9B9287] mobile:mt-[24px]">@2024 MAYOWA/TOBI</p>
           <SocialMedia />
         </div>
       </Wrapper>
