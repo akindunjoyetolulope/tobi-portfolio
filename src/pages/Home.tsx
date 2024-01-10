@@ -6,6 +6,7 @@ import Tobi from "../assets/tobi.jpeg";
 import Strip from "../components/Strip";
 import Wrapper from "../components/Wrapper";
 import Footer from "../components/Footer";
+import Accordion from "../components/Accordion";
 
 const Home = () => {
   return (
@@ -85,7 +86,8 @@ const Home = () => {
 
         <div className="pt-[24px] px-[40px] pb-[120px] mobile:px-[20px]">
           <p className="text-[16px] font-medium">TESTIMONIALS</p>
-          <div className="flex mt-[24px]">
+          <Accordion />
+          {/* <div className="flex mt-[24px]">
             <div className="border-black">
               <p className="text-[72px] font-medium mobile:text-[56px]">
                 Different
@@ -151,7 +153,7 @@ const Home = () => {
               <p>Stan Marion</p>
               <p>CEO, Talarian</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </Wrapper>
       <Strip content="→ VIEW MY WORKS" size="big" aminate />
