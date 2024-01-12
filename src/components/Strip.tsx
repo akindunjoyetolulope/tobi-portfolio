@@ -41,6 +41,12 @@ const StripContainer = styled.div<StripElProps>`
   overflow-y: scroll;
   display: flex;
   gap: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   ${(props) => {
     switch (props.variant) {
