@@ -1,39 +1,40 @@
 import * as React from "react";
 import styled from "@emotion/styled";
+import media from "../styles/media";
+import { accordionData } from "../utlis/testimony";
 
 const Accordion = () => {
-  const accordionData = {
-    header: "Different",
-    content:
-      "Tobi was a fractional hire to help us level up the aesthetics of our remittance mobile apps after we got our Series A. His impact went beyond the app redesign",
-    name: "Stan Marion",
-    title: "CEO, Talarian",
+  const [openAccordion, setOpenAccordion] = React.useState<null | number>(0);
+
+  const handleAccordionClick = (index: number) => {
+    if (index !== openAccordion) {
+      setOpenAccordion(index);
+    } else {
+      setOpenAccordion(null);
+    }
   };
-
-  const { header, content, name, title } = accordionData;
-
-  const [isActive, setIsActive] = React.useState(false);
 
   return (
     <AccordionEl>
-      <div className="accordion-item">
-        <div
-          className="text-[72px] font-medium mobile:text-[56px]"
-          onClick={() => setIsActive(!isActive)}
-        >
-          {header}
-        </div>
-        {isActive && (
-          <div>
-            <div className="accordion-content">{content}</div>
-            <hr className="w-[12px] border-black  my-[16px]" />
-            <p>{name}</p>
-            <p>{title}</p>
+      {accordionData.map((data, index) => (
+        <AccordionItemEl>
+          <div
+            className="accordion-title"
+            onClick={() => handleAccordionClick(index)}
+          >
+            {data.header}
           </div>
-        )}
-      </div>
-
-      <div></div>
+          {openAccordion === index ? (
+            <div className="accordion-body">
+              <p className="accordion-content">{data.content}</p>
+              <p className="mt-[16px]">{data.name}</p>
+              <p className="mb-[20px]">{data.title}</p>
+            </div>
+          ) : (
+            <></>
+          )}
+        </AccordionItemEl>
+      ))}
     </AccordionEl>
   );
 };
@@ -41,9 +42,37 @@ const Accordion = () => {
 export default Accordion;
 
 const AccordionEl = styled.div`
+  display: none;
   margin-top: 24px;
+  border-bottom: 1px solid black;
+  ${media.mobile} {
+    display: block;
+  }
+`;
 
-  .accordion-item {
-    border-right: 1px solid black;
+const AccordionItemEl = styled.div`
+  border-top: 1px solid black;
+  padding: 0px 20px;
+
+  .accordion-title {
+    margin: 20px 0px;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 64px; /* 114.286% */
+    letter-spacing: -2.4px;
+  }
+
+  .accordion-body {
+    margin: 16px 0px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 127.273% */
+    letter-spacing: -0.4px;
+
+    .accordion-content {
+      font-weight: 500px;
+    }
   }
 `;
