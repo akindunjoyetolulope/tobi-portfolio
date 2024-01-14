@@ -3,11 +3,19 @@ import media from "../styles/media";
 import { Link } from "react-router-dom";
 import themes from "../styles/themes";
 
-const Navbar = () => {
+interface Props {
+  onChangeColor: (x: string) => void;
+}
+
+const Navbar = (props: Props) => {
+  const { onChangeColor } = props;
   return (
     <NavbarContainer>
       <div>
-        <Link to="/">
+        <Link
+          to="/"
+          onClick={() => onChangeColor(themes.backgroundColors.orange)}
+        >
           <p>
             Oluwatobi Mayowa <br />
             Data driven UX
@@ -15,7 +23,10 @@ const Navbar = () => {
         </Link>
       </div>
       <NavbarLinks>
-        <Link to="/work">
+        <Link
+          to="/work"
+          onClick={() => onChangeColor(themes.backgroundColors.lightGreen)}
+        >
           <p>Work</p>
         </Link>
         <Link to="/writing">
