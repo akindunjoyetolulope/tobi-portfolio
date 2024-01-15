@@ -6,6 +6,7 @@ import Tobi from "../assets/tobi.jpeg";
 import Strip from "../components/Strip";
 import Wrapper from "../components/Wrapper";
 import Footer from "../components/Footer";
+import Accordion from "../components/Accordion";
 
 const Home = () => {
   return (
@@ -81,77 +82,13 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <hr className="border-black mx-[40px] mobile:mx-[20px]" />
+        <hr className="border-black mx-[40px] mobile:mx-[0px]" />
 
-        <div className="pt-[24px] px-[40px] pb-[120px] mobile:px-[20px]">
-          <p className="text-[16px] font-medium">TESTIMONIALS</p>
-          <div className="flex mt-[24px]">
-            <div className="border-black">
-              <p className="text-[72px] font-medium mobile:text-[56px]">
-                Different
-              </p>
-              <p>
-                Tobi was a fractional hire to help us level up the aesthetics of
-                our remittance mobile apps after we got our Series A. His impact
-                went beyond the app redesign,{" "}
-              </p>
-              <hr className="w-[12px] border-black" />
-              <p>Stan Marion</p>
-              <p>CEO, Talarian</p>
-            </div>
-            <div className="border-black">
-              <p className="text-[72px] font-medium mobile:text-[56px]">
-                Different
-              </p>
-              <p>
-                Tobi was a fractional hire to help us level up the aesthetics of
-                our remittance mobile apps after we got our Series A. His impact
-                went beyond the app redesign,{" "}
-              </p>
-              <hr className="w-[12px] border-black" />
-              <p>Stan Marion</p>
-              <p>CEO, Talarian</p>
-            </div>
-            <div className="border-black">
-              <p className="text-[72px] font-medium mobile:text-[56px]">
-                Different
-              </p>
-              <p>
-                Tobi was a fractional hire to help us level up the aesthetics of
-                our remittance mobile apps after we got our Series A. His impact
-                went beyond the app redesign,{" "}
-              </p>
-              <hr className="w-[12px] border-black" />
-              <p>Stan Marion</p>
-              <p>CEO, Talarian</p>
-            </div>
-            <div className="border-black">
-              <p className="text-[72px] font-medium mobile:text-[56px]">
-                Different
-              </p>
-              <p>
-                Tobi was a fractional hire to help us level up the aesthetics of
-                our remittance mobile apps after we got our Series A. His impact
-                went beyond the app redesign,{" "}
-              </p>
-              <hr className="w-[12px] border-black" />
-              <p>Stan Marion</p>
-              <p>CEO, Talarian</p>
-            </div>
-            <div className="border-black">
-              <p className="text-[72px] font-medium mobile:text-[56px]">
-                Different
-              </p>
-              <p>
-                Tobi was a fractional hire to help us level up the aesthetics of
-                our remittance mobile apps after we got our Series A. His impact
-                went beyond the app redesign,{" "}
-              </p>
-              <hr className="w-[12px] border-black" />
-              <p>Stan Marion</p>
-              <p>CEO, Talarian</p>
-            </div>
-          </div>
+        <div className="pt-[24px] px-[40px] pb-[120px] mobile:px-[0px]">
+          <p className="text-[16px] font-medium mobile:px-[20px]">
+            TESTIMONIALS
+          </p>
+          <Accordion />
         </div>
       </Wrapper>
       <Strip content="→ VIEW MY WORKS" size="big" aminate />
