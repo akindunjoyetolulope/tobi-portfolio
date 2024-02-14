@@ -10,9 +10,13 @@ function App() {
     themes.backgroundColors.orange
   );
 
+  const handlebackgroundColor = (color: string) => {
+    setBackgroundColor(color);
+  };
+
   return (
     <div style={{ backgroundColor: color }}>
-      <Navbar />
+      <Navbar onChangeColor={handlebackgroundColor} />
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route index path="/work" element={<Work />} />
